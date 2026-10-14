@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --bg-primary: #000000;
+    --bg-surface: #0a0a0a;
+    --bg-card: #121212;
+    --border-subtle: #262626;
+    --border-hover: #383838;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #000000;
+    color: #ededed;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Fan Rotation Animation */
+@keyframes spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Airflow Stream Dash Animation */
+@keyframes airflow-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes target-dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes curve-flow {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes sensor-ping {
+  0% {
+    r: 3.5px;
+    opacity: 0.85;
+  }
+  70% {
+    r: 10px;
+    opacity: 0;
+  }
+  100% {
+    r: 10px;
+    opacity: 0;
+  }
+}
+
+.animate-spin-fan {
+  animation: spin-cw var(--fan-speed, 1.2s) linear infinite;
+}
+
+.airflow-line {
+  stroke-dasharray: 6 4;
+  animation: airflow-dash var(--fan-speed, 1.2s) linear infinite;
+}
+
+.animate-target-dash {
+  animation: target-dash 1.4s linear infinite;
+}
+
+.animate-curve-flow {
+  animation: curve-flow 1.6s linear infinite;
+}
+
+.animate-sensor-ping {
+  animation: sensor-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Minimalist Dark Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}

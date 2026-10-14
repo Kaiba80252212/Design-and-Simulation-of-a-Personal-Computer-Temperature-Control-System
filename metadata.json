@@ -1,0 +1,6 @@
+{
+  "name": "PC Temperature Control System",
+  "description": "Design and Simulation of a Personal Computer Temperature Control System with real-time PID thermal dynamics and hardware schematic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
